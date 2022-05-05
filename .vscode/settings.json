@@ -1,0 +1,40 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        ".browserslistrc": true,
+        ".editorconfig": true,
+        ".firebaserc": true,
+        ".gitignore": true,
+        "angular.json": true,
+        "firebase.json": true,
+        "karma.conf.js": true,
+        "package-lock.json": true,
+        "package.json": true,
+        "README.md": true,
+        "tsconfig.app.json": true,
+        "tsconfig.json": true,
+        "tsconfig.spec.json": true,
+        "node_modules": true
+    },
+    "hide-files.files": [
+        ".browserslistrc",
+        ".editorconfig",
+        ".firebaserc",
+        ".gitignore",
+        "angular.json",
+        "firebase.json",
+        "karma.conf.js",
+        "package-lock.json",
+        "package.json",
+        "README.md",
+        "tsconfig.app.json",
+        "tsconfig.json",
+        "tsconfig.spec.json",
+        "node_modules"
+    ]
+}
