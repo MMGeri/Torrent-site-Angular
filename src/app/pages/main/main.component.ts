@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
+  query: string = '';
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  loadQuery(query: string) {
+    this.query = query;
   }
 
 }

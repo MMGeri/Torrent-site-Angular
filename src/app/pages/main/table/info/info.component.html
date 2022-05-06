@@ -1,0 +1,35 @@
+
+    <table class="more" style="border:none; width: 100%;" >
+        <thead>
+            <tr>
+                <th (click)="torrentInfo('download_url')">Download</th>
+                <th (click)="torrentInfo('desc')">Description</th>
+                <th (click)="torrentInfo('comments')">Comments</th>
+            </tr>
+            
+        </thead>
+        
+        <tbody>
+            <tr>
+                <td style="width: 100%; border:none" colspan="3">
+                    <hr>
+                    <ng-container [ngSwitch]="torrent?.info?.selected">
+                        <ng-container *ngSwitchCase="'download_url'">
+                            <a [href]="torrent?.info?.download_url">📥</a>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'desc'">
+                            <p>{{torrent?.info?.desc}}</p>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'comments'">
+                            <ng-container *ngFor="let comment of (torrent?.info?.comments | sortCommentsByDate)">
+                                <hr>
+                                <p>{{comment.sender_name}}</p>
+                                <p>{{comment.comment_text}}</p>
+                                <p>{{comment.time.toISOString().substring(0, 10)}}</p>
+                            </ng-container>
+                        </ng-container>
+                    </ng-container>
+                </td>
+            </tr>
+        </tbody>
+    </table>

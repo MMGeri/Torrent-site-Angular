@@ -1,0 +1,60 @@
+<div id="container">
+    <table id="torrents-table">
+        <thead>
+            <tr>
+                <th>
+                    <span  (click)="sort('name')">Name {{sortBy == 'name' ? 'V' : '_'}}</span>
+                </th>
+                <th>
+                    <span  (click)="sort('date')">Date {{sortBy == 'date' ? 'V' : '_'}}</span>
+                </th>
+                <th>
+                    <span  (click)="sort('size')">Size {{sortBy == 'size' ? 'V' : '_'}}</span>
+                </th>
+                <th>
+                    <span  (click)="sort('type')">FileType {{sortBy == 'type' ? 'V' : '_'}}</span>
+                </th>
+                <th>
+                    <span  (click)="sort('seeders')">Seeders {{sortBy == 'seeders' ? 'V' : '_'}}</span>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <ng-container  *ngFor="let torrent of (torrents | sort: sortBy |  search: searchInput)">
+                <tr>
+                    
+                    <td >
+                        <a class="name tooltip" (click)="show(torrent.id)">{{torrent.name}}
+                            <span class="tooltiptext">{{torrent.name}}</span>
+                        </a>    
+                        
+                    </td>
+                    <td>
+                        {{torrent.date.toISOString().substring(0, 10)}}
+                    </td>
+                    <td>
+                        {{torrent.size}} MB
+                    </td>
+                    <td>
+                        {{torrent.type}}
+                    </td>
+                    
+                    <td>
+                        {{torrent.seeders}}
+                    </td>
+                    
+                    
+                </tr>
+                
+                <tr *ngIf="torrent.info.enabled">
+                    <td colspan="5" class="torrent-info">
+                        <app-info [torrent]="torrent"></app-info>
+                    </td>
+                </tr>
+
+            </ng-container>
+            
+        </tbody>
+    </table>
+</div>

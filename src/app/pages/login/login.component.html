@@ -1,1 +1,17 @@
-<p>login works!</p>
+<main id="page-container">
+    <div id="log">
+
+        <form action="/login" method="POST">
+                <legend style=" font-size: 20pt; margin-bottom: 10px;"><strong>Bejelentkezés</strong></legend>
+                <label>E-mail:</label> <br/>
+                <input type="email" name="username" id="email" placeholder="test@gmail.com" required /><br/>
+                <label>Jelszó: </label><br/>
+                <input type="password" name="passwd" id="password" placeholder="asd123" required/><br/>
+
+                <input style="width:150px; margin:20px 15px 0px 0px;" type="submit" name="submit-btn"
+                       value="Bejelentkezés"/>
+                <a>Regisztracio</a>
+        </form>
+    </div>
+
+</main>

@@ -2,3 +2,24 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body{
+    background-color: rgb(47, 48, 61);
+    width: 100%;
+}
+
+*{
+    color:white;
+}
+
+input[type="text"], input[type="password"], input[type="email"]{ 
+    background-color: black;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid rgb(107, 100, 136);
+}
+
+input[type="submit"]{ 
+    background-color: rgb(39, 32, 65);
+    border: none;
+}
