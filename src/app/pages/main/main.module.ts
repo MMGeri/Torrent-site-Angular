@@ -11,6 +11,7 @@ import { SearchPipe } from 'src/app/shared/pipes/search-pipe/search.pipe';
 import { SortCommentsByDatePipe } from 'src/app/shared/pipes/sort-comments-by-date/sort-comments-by-date.pipe';
 import { FormsModule } from '@angular/forms';
 import { NavComponent } from 'src/app/shared/nav/nav.component';
+import { NavModule } from 'src/app/shared/nav/nav.module';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { NavComponent } from 'src/app/shared/nav/nav.component';
     FormsModule,
     CommonModule,
     MainRoutingModule,
+    NavModule
   ],
   providers: [SortPipe]
 })

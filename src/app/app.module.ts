@@ -31,12 +31,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    // MainComponent,
-    // ProfileComponent,
-    // LoginComponent,
-    // RegisterComponent,
-    // NavComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,

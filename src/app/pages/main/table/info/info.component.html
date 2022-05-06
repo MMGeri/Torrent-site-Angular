@@ -15,7 +15,7 @@
                     <hr>
                     <ng-container [ngSwitch]="torrent?.info?.selected">
                         <ng-container *ngSwitchCase="'download_url'">
-                            <a [href]="torrent?.info?.download_url">📥</a>
+                            <a style="font-size:xx-large;" [href]="torrent?.info?.download_url">📥</a>
                         </ng-container>
                         <ng-container *ngSwitchCase="'desc'">
                             <p>{{torrent?.info?.desc}}</p>
