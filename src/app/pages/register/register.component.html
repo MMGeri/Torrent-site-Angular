@@ -1,1 +1,37 @@
-<p>register works!</p>
+<a mat-stroked-button color="basic" class="button" routerLink="/login" id="back">back</a>
+<main id="page-container">
+    <div id="log">
+
+        <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+            
+                <legend style=" font-size: 20pt; margin-bottom: 10px;"><strong>Regisztracio</strong></legend>
+                
+                <mat-form-field appearance="standard">
+                    <mat-label>Username</mat-label>
+                    <input required matInput type="text" placeholder="Test Person" formControlName="username"  id="username">
+                </mat-form-field>
+                
+                <mat-form-field appearance="standard">
+                    <mat-label>Email</mat-label>
+                    <input required matInput type="email" placeholder="test@gmail.com" formControlName="email"  id="email">
+                </mat-form-field>
+                
+                <mat-form-field appearance="standard" type="password"   placeholder="asd123" required>
+                    <mat-label>Password</mat-label>
+                    <input required matInput type="password" placeholder="asd123" formControlName="password" id="password">
+                </mat-form-field>
+                
+                <mat-form-field appearance="standard" type="password"   placeholder="asd123" required>
+                    <mat-label>Confirm password</mat-label>
+                    <input required matInput type="password" placeholder="asd123" formControlName="confirmPassword" id="confirmPassword">
+                </mat-form-field>
+                
+              
+
+                <button style="width:100%; margin-bottom: 10px;" mat-flat-button color="primary"  type="submit" >Regisztracio</button>
+
+                
+        </form>
+    </div>
+    <span *ngIf="loading" class="spinner"><mat-spinner></mat-spinner></span>
+</main>

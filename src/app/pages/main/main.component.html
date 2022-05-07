@@ -1,7 +1,18 @@
+<ng-container *ngIf="loggedIn">
+<mat-sidenav-container>
+    
+    <mat-sidenav-content>
+
 <app-nav></app-nav>
-<div id="container">
+<div class="container">
 <img src="assets/pirate_cat.png"/>
 <h1>Pirate Cat</h1>
-<app-search-bar (searchEmitter)="loadQuery($event)" ></app-search-bar>
+<!-- <app-search-bar (searchEmitter)="loadQuery($event)" ></app-search-bar> -->
 <app-table [searchInput]="query"></app-table>
 </div>
+
+       
+</mat-sidenav-content>
+    
+</mat-sidenav-container>
+</ng-container>

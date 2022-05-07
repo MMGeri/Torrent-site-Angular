@@ -1,9 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
+html, body { 
+    height: 100%; 
+}
+
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 body{
-    background-color: rgb(47, 48, 61);
+    background-color: #303030;
     width: 100%;
 }
 
@@ -11,15 +14,50 @@ body{
     color:white;
 }
 
-input[type="text"], input[type="password"], input[type="email"]{ 
-    background-color: black;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: solid rgb(107, 100, 136);
+
+.container{
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    margin-top: 50px;
+    align-items:center;
+} 
+
+
+.mat-snack-bar-container{
+    background: #a85d5d;
 }
 
-input[type="submit"]{ 
-    background-color: rgb(39, 32, 65);
-    border: none;
+mat-sidenav-container{
+    height: 100%;
+}
+
+
+
+.spinner{
+    position: fixed;
+    z-index: 9999;
+    height: 1em;
+    width: 1em;
+    overflow: show;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom:0;
+    right:0;
+    text-align: center;
+    align-items: center;
+}
+.spinner:before{
+    content: "";
+    display:block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right:0;
+    width: 100%;   
+    height: 100%;
+    background-color: #000000bd;
 }

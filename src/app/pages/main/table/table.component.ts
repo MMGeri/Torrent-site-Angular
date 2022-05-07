@@ -17,20 +17,26 @@ export class TableComponent implements OnInit {
   
   
   torrents: Torrent[] = TorrentsObject;
+  sortedData: Torrent[] = [];
+
+
   info: any;
   
-  constructor(private sortPipe: SortPipe) { 
+  constructor(private sortPipe: SortPipe) {
     this.sortBy = 'name';
     this.info = {};
+    this.sortedData = this.torrents.slice();
   }
   
   ngOnInit(): void {
   }
   
-  sort(by: string) {
-    this.sortBy = by;
-    this.torrents = this.sortPipe.transform(this.torrents, this.sortBy);
-    this.torrents = [...this.torrents];
+  sortData(by: any) {
+    this.sortBy = by.active;
+    const data = this.torrents.slice();
+    const isAsc = by.direction === 'asc';
+    this.sortedData = this.sortPipe.transform(data, this.sortBy,isAsc);
+    this.sortedData = [...this.sortedData];
   }
   
   show(id:number){

@@ -11,6 +11,7 @@ export const environment = {
     authDomain: 'torrent-dec7e.firebaseapp.com',
     messagingSenderId: '541099856224',
   },
+  hostUrl: 'http://localhost:4200',
   production: false
 };
 

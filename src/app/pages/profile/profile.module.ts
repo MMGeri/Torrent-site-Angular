@@ -3,9 +3,9 @@ import { CommonModule } from '@angular/common';
 
 import { ProfileRoutingModule } from './profile-routing.module';
 import { ProfileComponent } from './profile.component';
-import { NavComponent } from 'src/app/shared/nav/nav.component';
-import { NavModule } from 'src/app/shared/nav/nav.module';
 
+import { NavModule } from '../../shared/nav/nav.module';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [
@@ -14,7 +14,10 @@ import { NavModule } from 'src/app/shared/nav/nav.module';
   imports: [
     CommonModule,
     ProfileRoutingModule,
-    NavModule
+    NavModule,
+    MatSidenavModule
+
+
   ]
 })
 export class ProfileModule { }

@@ -9,10 +9,15 @@ import { InfoComponent } from './table/info/info.component';
 import { SortPipe } from 'src/app/shared/pipes/sort-pipe/sort.pipe';
 import { SearchPipe } from 'src/app/shared/pipes/search-pipe/search.pipe';
 import { SortCommentsByDatePipe } from 'src/app/shared/pipes/sort-comments-by-date/sort-comments-by-date.pipe';
-import { FormsModule } from '@angular/forms';
-import { NavComponent } from 'src/app/shared/nav/nav.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavModule } from 'src/app/shared/nav/nav.module';
 
+import { MatSidenavModule } from '@angular/material/sidenav';
+import {MatSortModule} from '@angular/material/sort';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -26,9 +31,17 @@ import { NavModule } from 'src/app/shared/nav/nav.module';
   ],
   imports: [
     FormsModule,
+    ReactiveFormsModule,
     CommonModule,
     MainRoutingModule,
-    NavModule
+    NavModule,
+
+    MatSidenavModule,
+    MatSortModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatInputModule,
+    MatTooltipModule
   ],
   providers: [SortPipe]
 })

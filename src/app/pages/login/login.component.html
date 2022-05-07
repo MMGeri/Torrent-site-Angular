@@ -1,17 +1,27 @@
 <main id="page-container">
     <div id="log">
+        
+        
+        
+        <legend style=" font-size: 20pt; margin-bottom: 10px;"><strong>Bejelentkezés</strong></legend>
+        
+        <mat-form-field appearance="standard">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" placeholder="test@gmail.com" [formControl]="email"  id="email">
+        </mat-form-field>
 
-        <form action="/login" method="POST">
-                <legend style=" font-size: 20pt; margin-bottom: 10px;"><strong>Bejelentkezés</strong></legend>
-                <label>E-mail:</label> <br/>
-                <input type="email" name="username" id="email" placeholder="test@gmail.com" required /><br/>
-                <label>Jelszó: </label><br/>
-                <input type="password" name="passwd" id="password" placeholder="asd123" required/><br/>
+        
 
-                <input style="width:150px; margin:20px 15px 0px 0px;" type="submit" name="submit-btn"
-                       value="Bejelentkezés"/>
-                <a>Regisztracio</a>
-        </form>
+        <mat-form-field appearance="standard" type="password"   placeholder="asd123" required>
+            <mat-label>Password</mat-label>
+            <input matInput type="password" placeholder="asd123" [formControl]="password" id="password">
+        </mat-form-field>
+        
+        <button style="width:100%; margin-bottom: 10px;" mat-flat-button color="primary"  type="submit" (click)="login()" >Bejelentkezés</button>
+        
+        <a style="width:100%" mat-flat-button color="primary" routerLink="/register" >Regisztráció</a>
+        
+        
     </div>
-
+    <span *ngIf="loading" class="spinner"><mat-spinner></mat-spinner></span>
 </main>
