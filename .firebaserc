@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "torrent-dec7e": {
+      "hosting": {
+        "torrent-project": [
+          "torrent-dec7e"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "torrent-dec7e"
+  }
+}

@@ -1,0 +1,58 @@
+@media screen and (max-width: 600px) {
+        .name{
+            max-width: 50px !important;
+        }
+}
+
+  
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+table{
+    border: 1px solid white;
+    border-radius: 10px;
+}
+td{
+    border: 1px solid white;
+    padding: 10px;
+}
+th:hover{
+    cursor: pointer;
+}
+
+.name{
+    display:block;
+    white-space: nowrap;
+   width: 300px;
+   overflow: hidden;
+   transition: 200ms;
+}
+
+.name:hover{
+    cursor: pointer;
+}
+
+#torrents-table{
+    background-color: rgb(80, 82, 104);
+}
+
+.torrent-info{
+    background-color: rgb(53, 54, 73);
+}
+
+
+#container{
+    width: 100%;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+
+  .name:hover{
+    color:rgb(50, 204, 50);
+}

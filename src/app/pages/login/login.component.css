@@ -1,0 +1,27 @@
+
+#page-container {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width: 300px;
+}
+
+#log {
+    z-index: 1;
+    background-color: rgb(80, 82, 104);
+    padding:20px;
+    border-radius: 10px;
+}
+
+
+
+
+#log > fieldset {
+    margin-bottom:20px;
+}
+
+.mat-form-field{
+    width: 100%;
+}
+

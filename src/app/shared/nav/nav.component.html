@@ -1,0 +1,26 @@
+<mat-sidenav #sidenav fxHide.gt-xs>
+    <mat-nav-list >
+        
+        <a mat-list-item routerLink="/main" routerLinkActive="active" (click)="onToggleSidenav(sidenav)"><mat-icon>home</mat-icon>Home</a>
+        
+        <a mat-list-item routerLink="/profile" routerLinkActive="active" (click)="onToggleSidenav(sidenav)"><mat-icon>person</mat-icon>Profile</a>
+        
+        <a mat-list-item routerLink="/login" routerLinkActive="active" (click)="onToggleSidenav(sidenav)" (click)="onLogout()"><mat-icon>logout</mat-icon>Logout</a>
+    </mat-nav-list>
+</mat-sidenav>
+
+
+<mat-toolbar color="primary">
+    <div fxHide.gt-xs>
+        <button mat-icon-button (click)="onToggleSidenav(sidenav)">
+            <mat-icon>menu</mat-icon>
+        </button>
+    </div>
+    <ul fxLayout fxLayoutGap="20px" fxHide.xs>
+        <li><a id="home" routerLink="/main" >Home</a></li>
+        <li><a routerLink="/profile" >Profile</a></li>
+        <li><a routerLink="/login" (click)="onLogout()">Logout</a></li>
+    </ul>
+</mat-toolbar>
+
+

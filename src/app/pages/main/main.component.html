@@ -1,0 +1,20 @@
+
+<mat-sidenav-container>
+    
+    <mat-sidenav-content>
+
+<app-nav></app-nav>
+<div class="container">
+<img src="assets/pirate_cat.png"/>
+<h1>Pirate Cat</h1>
+<p>lehet feltűnik számodra hogy ezek csak txt fileok, nem pedig torrentek,
+     de most nem volt kedvem kilogikázni hogy hogy mükszik egy torrent szoval tessék
+    kapsz egy bee movie scriptet meg ilyeneket helyettük.</p>
+<app-search-bar (searchEmitter)="loadQuery($event)" ></app-search-bar>
+<app-table [searchInput]="query"></app-table>
+</div>
+
+
+</mat-sidenav-content>
+    
+</mat-sidenav-container>

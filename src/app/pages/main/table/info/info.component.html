@@ -1,0 +1,46 @@
+
+    <table class="more" style="border:none; width: 100%;" >
+        <thead>
+            <tr>
+                <th (click)="torrentInfo('download_url')">Download</th>
+                <th (click)="torrentInfo('desc')">Description</th>
+                <th (click)="torrentInfo('comments')">Comments</th>
+            </tr>
+            
+        </thead>
+        
+        <tbody>
+            <tr>
+                <td style="width: 100%; border:none" colspan="3">
+                    <hr>
+                    <ng-container [ngSwitch]="torrent?.info?.selected">
+                        <ng-container *ngSwitchCase="'download_url'">
+                            <a style="font-size:xx-large;" (click)="download(torrent.info.download_url,torrent.type)">📥</a>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'desc'">
+                            <pre>{{torrent.uploader_name}}:</pre>
+                            <pre>{{torrent?.info?.desc}}</pre>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'comments'">
+                            <ng-container *ngFor="let comment of (torrent?.info?.comments | sortCommentsByDate)">
+                                <hr>
+                                <p>{{comment.sender_name}}</p>
+                                <pre>{{comment.comment_text}}</pre>
+                                <p>{{comment.time.toISOString().substring(0, 10)}}</p>
+                            </ng-container>
+                            <hr>
+                            <form [formGroup]="commentsForm" (ngSubmit)="onSubmit()">
+
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Comment:</mat-label>
+                                        <textarea matInput rows ="5" formControlName="comment_text"></textarea>
+                                    </mat-form-field>
+
+                                    <button mat-flat-button color="primary" type="submit" value="submit">submit</button>
+                            </form>
+                        </ng-container>
+                    </ng-container>
+                </td>
+            </tr>
+        </tbody>
+    </table>

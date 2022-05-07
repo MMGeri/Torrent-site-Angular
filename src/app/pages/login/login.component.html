@@ -1,0 +1,27 @@
+<main id="page-container">
+    <div id="log">
+        
+        
+        
+        <legend style=" font-size: 20pt; margin-bottom: 10px;"><strong>Bejelentkezés</strong></legend>
+        
+        <mat-form-field appearance="standard">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" placeholder="test@gmail.com" [formControl]="email"  id="email">
+        </mat-form-field>
+
+        
+
+        <mat-form-field appearance="standard" type="password"   placeholder="asd123" required>
+            <mat-label>Password</mat-label>
+            <input matInput type="password" placeholder="asd123" [formControl]="password" id="password">
+        </mat-form-field>
+        
+        <button style="width:100%; margin-bottom: 10px;" mat-flat-button color="primary"  type="submit" (click)="login()" >Bejelentkezés</button>
+        
+        <a style="width:100%" mat-flat-button color="primary" routerLink="/register" >Regisztráció</a>
+        
+        
+    </div>
+    <span *ngIf="loading" class="spinner"><mat-spinner></mat-spinner></span>
+</main>
