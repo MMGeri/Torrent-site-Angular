@@ -16,24 +16,25 @@ export class AuthService {
   }
   
   signUp(email: string, password: string, username: string){
-    //TODO: save username to database
     
-      let promise = this.auth.createUserWithEmailAndPassword(email,password)
-      promise.then(() => {
-        this.auth.currentUser.then(user => {
-          user?.updateProfile({
-            displayName: username
-          })})});
-      return promise;
-    }
-      
-    logout(){
-      return this.auth.signOut();
-    }
     
-    getUser(){
-      return this.auth.user;
-    }
+    let promise = this.auth.createUserWithEmailAndPassword(email,password);
+    promise.then(() => {
+      this.auth.currentUser.then(user => {
+        user?.updateProfile({
+          displayName: username
+        })})});
+        return promise;
+  }
       
-    }
+  logout(){
+    localStorage.removeItem('user');
+    return this.auth.signOut();
+  }
+  
+  getUser(){
+    return this.auth.user;
+  }
+  
+}
     

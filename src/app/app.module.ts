@@ -14,7 +14,6 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
 import { AngularFireModule } from '@angular/fire/compat';
 
 
-
 @NgModule({
   declarations: [
     AppComponent
@@ -28,6 +27,7 @@ import { AngularFireModule } from '@angular/fire/compat';
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage())
+
   ],
   bootstrap: [AppComponent]
 })

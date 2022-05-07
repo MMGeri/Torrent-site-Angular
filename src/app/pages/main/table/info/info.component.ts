@@ -3,6 +3,8 @@ import { Input } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Torrent } from 'src/app/shared/types/Torrent';
 import { Comment } from 'src/app/shared/types/Comment';
+import { DatabaseService } from 'src/app/shared/services/database.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-info',
@@ -21,7 +23,11 @@ export class InfoComponent implements OnInit {
       }
     )
     
-    constructor(private fb: FormBuilder) { }
+    constructor(
+      private fb: FormBuilder, 
+      private dbService: DatabaseService,
+      private router: Router
+      ) { }
     
     ngOnInit(): void {
       
@@ -39,6 +45,10 @@ export class InfoComponent implements OnInit {
     torrentInfo(info:string){
       if(this.torrent?.info.enabled != undefined)
       this.torrent.info.selected=info;
+    }
+
+    download(url: string,fileType:string) {
+      this.dbService.downloadFile(url,fileType);
     }
     
   }

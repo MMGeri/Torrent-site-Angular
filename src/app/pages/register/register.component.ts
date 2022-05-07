@@ -3,6 +3,9 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { User } from 'src/app/shared/types/User';
+import { DatabaseService } from 'src/app/shared/services/database.service';
+
 
 @Component({
   selector: 'app-register',
@@ -19,11 +22,14 @@ export class RegisterComponent implements OnInit {
     password: new FormControl(''),
     confirmPassword: new FormControl('')
   })
+
+
   
   constructor(
     private router: Router,
     private authService: AuthService,
-    private _snackBar: MatSnackBar) 
+    private _snackBar: MatSnackBar,
+    private dbService: DatabaseService) 
     { 
       
     }
@@ -35,12 +41,17 @@ export class RegisterComponent implements OnInit {
       if(this.signUpForm.value.email && this.signUpForm.value.password && this.signUpForm.value.username){
         if(this.signUpForm.value.password == this.signUpForm.value.confirmPassword){
           this.authService.signUp(this.signUpForm.get('email')?.value, this.signUpForm.get('password')?.value,this.signUpForm.get('username')?.value).then((cred) => {
+            
+            const user: User = {id: cred.user?.uid as string, username: this.signUpForm.get('username')?.value};
+            this.dbService.createUser(user);
+
             this.loading = false;
-            this.router.navigate(['/main'])
+            this.router.navigate(['/login'])
+            
           }
-          ).catch(() => {
+          ).catch((err) => {
             this.loading = false;
-            this.wrongCredentialsSnackbar("Wrong email or password!");
+            this.wrongCredentialsSnackbar(err.message);
           });
         }
         else{

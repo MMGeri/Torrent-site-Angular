@@ -26,6 +26,11 @@ export class LoginComponent implements OnInit {
     
     if(this.email.value && this.password.value)
     this.authService.login(this.email.value, this.password.value).then((cred) => {
+      this.authService.getUser().subscribe(user => {
+        localStorage.setItem('user', JSON.stringify(user));
+      }, error => {
+        localStorage.setItem('user', JSON.stringify('null'));
+      });
       this.router.navigate(['/main'])
       this.loading = false;
     }).catch(() => {
