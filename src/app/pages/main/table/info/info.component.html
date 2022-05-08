@@ -18,14 +18,14 @@
                             <a style="font-size:xx-large;" (click)="download(torrent.info.download_url,torrent.type)">📥</a>
                         </ng-container>
                         <ng-container *ngSwitchCase="'desc'">
-                            <pre>{{torrent.uploader_name}}:</pre>
-                            <pre>{{torrent?.info?.desc}}</pre>
+                            <p>{{torrent.uploader_name}}:</p>
+                            <p>{{torrent?.info?.desc}}</p>
                         </ng-container>
                         <ng-container *ngSwitchCase="'comments'">
                             <ng-container *ngFor="let comment of (torrent?.info?.comments | sortCommentsByDate)">
                                 <hr>
                                 <p>{{comment.sender_name}}</p>
-                                <pre>{{comment.comment_text}}</pre>
+                                <p>{{comment.comment_text}}</p>
                                 <p>{{comment.time.toISOString().substring(0, 10)}}</p>
                             </ng-container>
                             <hr>
